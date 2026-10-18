@@ -1,0 +1,474 @@
+<title>Boothie Privacy Policy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap">
+
+<style>
+:root {
+  --bg: #F7F6F3;
+  --surface: #FFFFFF;
+  --fg: #16151A;
+  --muted: #706D78;
+  --subtle: #A8A5B0;
+  --border: #E8E6F0;
+  --accent: #E02D52;
+  --accent-dim: rgba(224,45,82,0.1);
+  --hero-bg: #16151A;
+  --hero-fg: #F7F6F3;
+  --hero-muted: rgba(247,246,243,0.55);
+  --pill-bg: #EDEAF5;
+  --pill-fg: #5A4E7A;
+  --card-bg: #FFFFFF;
+  --tag-analytics: #0EA5E9;
+  --tag-ads: #F59E0B;
+  --tag-payments: #10B981;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F0E12; --surface: #19181F; --fg: #F0EEF5;
+    --muted: #908CA0; --subtle: #5E5A6E; --border: #28263200;
+    --accent: #F04060; --accent-dim: rgba(240,64,96,0.12);
+    --hero-bg: #09080B; --hero-fg: #F0EEF5;
+    --hero-muted: rgba(240,238,245,0.5);
+    --pill-bg: #221F2E; --pill-fg: #B8A8E0;
+    --card-bg: #19181F;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F0E12; --surface: #19181F; --fg: #F0EEF5;
+  --muted: #908CA0; --subtle: #5E5A6E; --border: #282632;
+  --accent: #F04060; --accent-dim: rgba(240,64,96,0.12);
+  --hero-bg: #09080B; --hero-fg: #F0EEF5;
+  --hero-muted: rgba(240,238,245,0.5);
+  --pill-bg: #221F2E; --pill-fg: #B8A8E0;
+  --card-bg: #19181F;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  padding-left: max(0px, env(safe-area-inset-left, 0px));
+  padding-right: max(0px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--hero-bg);
+  padding: 52px max(24px, env(safe-area-inset-left, 0px)) 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 120%, rgba(224,45,82,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.app-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #E8385A 0%, #B01E3A 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(224,45,82,0.4);
+  flex-shrink: 0;
+}
+.app-icon svg { width: 28px; height: 28px; fill: white; }
+
+.app-name {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--hero-fg);
+  letter-spacing: 0.01em;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--hero-fg);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  text-wrap: balance;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.effective-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--hero-muted);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.effective-tag::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── NAV ── */
+.nav-wrap {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 100;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 max(24px, env(safe-area-inset-left, 0px));
+}
+
+.nav-link {
+  flex: 1;
+  padding: 16px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-link:hover { color: var(--fg); text-decoration: none; }
+.nav-link.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ── CONTENT ── */
+.content-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 max(24px, env(safe-area-inset-left, 0px));
+  padding-block: 48px 80px;
+}
+
+/* ── SECTION ── */
+.doc-section {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+.doc-section:last-of-type { border-bottom: none; }
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--fg);
+  line-height: 1.25;
+  margin-bottom: 16px;
+  text-wrap: balance;
+}
+
+h3 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 28px 0 10px;
+}
+
+p { color: var(--fg); margin-bottom: 14px; }
+p:last-child { margin-bottom: 0; }
+
+ul {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 14px;
+}
+
+ul li {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0;
+  color: var(--fg);
+}
+
+ul li::before {
+  content: '–';
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1.75;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── THIRD-PARTY CARDS ── */
+.tp-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tp-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tp-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.tp-icon.ads    { background: rgba(245,158,11,0.12); }
+.tp-icon.analytics { background: rgba(14,165,233,0.12); }
+.tp-icon.payments  { background: rgba(16,185,129,0.12); }
+
+.tp-body { flex: 1; min-width: 0; }
+.tp-name { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+.tp-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+.tp-tag {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.tp-tag.ads      { background: rgba(245,158,11,0.12); color: #D97706; }
+.tp-tag.analytics { background: rgba(14,165,233,0.12); color: #0284C7; }
+.tp-tag.payments  { background: rgba(16,185,129,0.12); color: #059669; }
+
+/* ── CONTACT BOX ── */
+.contact-card {
+  margin-top: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-avatar {
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  background: var(--accent-dim);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.contact-avatar svg { width: 22px; height: 22px; fill: var(--accent); }
+
+.contact-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+
+.contact-email {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+  word-break: break-all;
+}
+</style>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="app-badge">
+      <div class="app-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 11c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6.5c-1.38 0-2.5 1.12-2.5 2.5S10.62 13.5 12 13.5s2.5-1.12 2.5-2.5S13.38 8.5 12 8.5z"/></svg>
+      </div>
+      <span class="app-name">Boothie</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <div class="hero-meta">
+      <span class="effective-tag">Effective January 1, 2025</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav-inner">
+    <a class="nav-link active" href="privacy-policy.html">Privacy Policy</a>
+    <a class="nav-link" href="terms.html">Terms of Service</a>
+  </nav>
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrap">
+
+  <div class="doc-section">
+    <div class="section-eyebrow">Overview</div>
+    <h2>Your privacy matters to us</h2>
+    <p>Boothie is a photobooth strip app for iOS. This Privacy Policy explains what information we collect when you use our app, how we use it, and the choices you have. We keep it as simple as possible.</p>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-eyebrow">Data Collection</div>
+    <h2>What we collect</h2>
+
+    <h3>Camera &amp; Photos</h3>
+    <p>Boothie requires camera access to capture photos for your photobooth strips. Your photos are never uploaded to our servers — they stay entirely on your device unless you choose to share them. If you grant photo library access, we only write the finished strip to your library; we never read or analyze existing photos.</p>
+
+    <h3>Purchase Information</h3>
+    <p>All in-app purchases are handled by Apple. We receive only a confirmation of your purchase status — we never see your payment details, credit card number, or Apple ID credentials.</p>
+
+    <h3>Usage &amp; Analytics</h3>
+    <p>We use Firebase Analytics to understand how the app is used in aggregate. This may include:</p>
+    <ul>
+      <li>Which templates and features are most popular</li>
+      <li>Session length and frequency</li>
+      <li>Crash reports and error logs</li>
+      <li>Device model, OS version, and app version</li>
+    </ul>
+    <p>None of this data is linked to your personal identity.</p>
+
+    <h3>Advertising</h3>
+    <p>The free version of Boothie shows ads via Google AdMob. AdMob may use your device's Advertising Identifier (IDFA) to show relevant ads. You can opt out in iOS Settings → Privacy &amp; Security → Tracking.</p>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-eyebrow">Third Parties</div>
+    <h2>Services we use</h2>
+    <p>Boothie integrates with the following services, each with their own privacy policies:</p>
+    <div class="tp-grid">
+      <div class="tp-card">
+        <div class="tp-icon ads">📢</div>
+        <div class="tp-body">
+          <div class="tp-name">Google AdMob</div>
+          <div class="tp-desc">Serves ads in the free version of the app</div>
+        </div>
+        <span class="tp-tag ads">Ads</span>
+      </div>
+      <div class="tp-card">
+        <div class="tp-icon analytics">📊</div>
+        <div class="tp-body">
+          <div class="tp-name">Firebase Analytics</div>
+          <div class="tp-desc">App usage analytics and crash reporting</div>
+        </div>
+        <span class="tp-tag analytics">Analytics</span>
+      </div>
+      <div class="tp-card">
+        <div class="tp-icon payments">🔒</div>
+        <div class="tp-body">
+          <div class="tp-name">Apple StoreKit</div>
+          <div class="tp-desc">Processes in-app purchases and subscriptions</div>
+        </div>
+        <span class="tp-tag payments">Payments</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-eyebrow">Security</div>
+    <h2>How we protect your data</h2>
+    <p>Photos you take with Boothie are stored only on your device — we don't operate servers that hold your photos. Analytics data is processed by Firebase on Google's infrastructure under industry-standard security practices.</p>
+    <p>We retain analytics data for up to 14 months per Firebase's default settings. You can request deletion at any time by contacting us.</p>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-eyebrow">Children</div>
+    <h2>Children's privacy</h2>
+    <p>Boothie is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe we have done so inadvertently, please contact us and we will delete that information promptly.</p>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-eyebrow">Your Rights</div>
+    <h2>Control over your data</h2>
+    <p>Depending on your location, you may have the right to access, correct, or delete personal data we hold. You can also:</p>
+    <ul>
+      <li>Opt out of analytics tracking in iOS Settings → Privacy &amp; Security → Tracking</li>
+      <li>Limit ad personalization in iOS Settings → Privacy &amp; Security → Apple Advertising</li>
+      <li>Contact us to request deletion of any analytics data tied to your device</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-eyebrow">Updates</div>
+    <h2>Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we update the effective date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <div class="doc-section">
+    <div class="section-eyebrow">Contact</div>
+    <h2>Get in touch</h2>
+    <p>Have a question about this Privacy Policy or want to exercise your rights? Reach us at:</p>
+    <div class="contact-card">
+      <div class="contact-avatar">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-email">tuan.iosdev@gmail.com</div>
+      </div>
+    </div>
+  </div>
+
+</div>
