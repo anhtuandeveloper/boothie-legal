@@ -1,0 +1,256 @@
+/* Boothie Design System */
+:root {
+  --brand: #ff2d8f;
+  --brand-dark: #d81b6d;
+  --bg: #ffffff;
+  --bg-soft: #faf7fa;
+  --bg-card: #ffffff;
+  --text: #1a1a1a;
+  --text-soft: #6b6b73;
+  --border: #e8e4e8;
+  --radius: 14px;
+  --shadow: 0 1px 3px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e0e10;
+    --bg-soft: #16161a;
+    --bg-card: #1a1a1f;
+    --text: #f2f2f5;
+    --text-soft: #a5a5ae;
+    --border: #2a2a30;
+    --shadow: 0 1px 3px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+}
+
+header.site {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+header.site .mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.site .name {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+header.site .tag {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0 0 8px;
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-size: 17px;
+  color: var(--text-soft);
+  margin: 0 0 40px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  margin: 48px 0 16px;
+  padding-top: 8px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 24px 0 8px;
+}
+
+p {
+  margin: 0 0 16px;
+  font-size: 16px;
+}
+
+ul {
+  padding-left: 22px;
+  margin: 0 0 16px;
+}
+
+ul li {
+  margin-bottom: 6px;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 32px 0;
+  box-shadow: var(--shadow);
+}
+
+.contact-card .label {
+  font-size: 13px;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.contact-card .email {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contact-card .hours {
+  font-size: 14px;
+  color: var(--text-soft);
+  margin-top: 8px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item .q {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.faq-item .a {
+  color: var(--text-soft);
+  font-size: 15px;
+  margin: 0;
+}
+
+.faq-item .a a {
+  color: var(--brand);
+}
+
+footer.site {
+  margin-top: 72px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+footer.site .links {
+  display: flex;
+  gap: 16px;
+}
+
+footer.site .copy {
+  margin-left: auto;
+}
+
+@media (max-width: 480px) {
+  .container { padding: 32px 20px 64px; }
+  h1 { font-size: 28px; }
+  .subtitle { font-size: 16px; }
+  header.site .tag { display: none; }
+  footer.site { flex-direction: column; align-items: flex-start; }
+  footer.site .copy { margin-left: 0; }
+}
+
+/* Landing page specific */
+.hero {
+  text-align: center;
+  padding: 80px 0 64px;
+}
+
+.hero .mark {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  margin: 0 auto 24px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(255, 45, 143, 0.3);
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero .subtitle {
+  font-size: 19px;
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+
+.hero .links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 48px 0 32px; }
+  .hero h1 { font-size: 36px; }
+  .hero .subtitle { font-size: 16px; }
+}
